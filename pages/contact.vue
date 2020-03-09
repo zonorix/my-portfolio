@@ -1,11 +1,22 @@
 <template>
-  <div>
-    <h1 class="works-title">contact</h1>
+  <div class="contact">
+    <Title :pageTitle="this.$route.name" />
   </div>
 </template>
 
+<script>
+import Title from '~/components/Title.vue'
+
+export default {
+  components: {
+    Title
+  }
+}
+</script>
+
 <style scoped lang="scss">
-  .works-title {
-    font-size: 10rem;
+  .contact {
+    margin: 100px auto 0;
+    min-height: 100vh;
   }
 </style>
