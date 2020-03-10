@@ -2,9 +2,11 @@
   <div class="about">
     <Title :pageTitle="this.$route.name" />
     <div class="about__gray-back">
-      <img src="images/face-icon.svg" alt="" class="about__face-icon">
-      <div class="about__greet">
-        Hello, I'm Shigeo Motozono
+      <div class="about__icon-container">
+        <img src="images/face-icon.svg" alt="" class="about__face-icon">
+        <div class="about__greet">
+          Hello, I'm Shigeo Motozono
+        </div>
       </div>
       <div class="skillset">
         <h2 class="skillset__title">
@@ -22,6 +24,7 @@
             <h3 class="skillset__sub-title">main</h3>
             <div class="skillset__item">HTML</div>
             <div class="skillset__item">CSS</div>
+            <div class="skillset__item">jQuery</div>
             <div class="skillset__item">WordPress</div>
           </div>
           <div class="skillset__develop-container">
@@ -36,6 +39,7 @@
             <div class="skillset__item">Pug</div>
             <div class="skillset__item">SCSS</div>
             <div class="skillset__item">BEM</div>
+            <div class="skillset__item">Git</div>
             <div class="skillset__item">Gulp</div>
           </div>
         </div>
@@ -64,6 +68,12 @@ export default {
       border-radius: 40px;
       padding-bottom: 60px;
     }
+    &__icon-container {
+      background-color: #ccebd1;
+      // background-color: #ccebd1;
+      border-radius: 40px 40px 0 0;
+      padding-bottom: 40px;
+    }
     &__face-icon {
       max-width: 150px;
       height: auto;
@@ -90,7 +100,7 @@ export default {
       color: #35495e;
       text-transform: uppercase;
       font-family: 'Patua One', cursive;
-      margin-top: 48px;
+      margin-top: 38px;
       * {
         display: inline-block;
         margin: 0 1.6px;
@@ -99,7 +109,7 @@ export default {
         width: 24px;
       }
       &--s, &--s-2 {
-        background-color: #54BCF6;
+        background-color: #a6deeb;
         color: #fff;
       }
     }
@@ -121,7 +131,7 @@ export default {
       display: inline-block;
       margin: 8px 10px 0 0;
       padding: 4px 14px 6px;
-      border: 1px solid #54BCF6;
+      border: 1px solid #a6deeb;
       color: #526488;
       background-color: #fff;
       line-height: 1;

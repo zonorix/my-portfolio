@@ -1,7 +1,7 @@
 <template>
   <div class="app-layout">
     <div class="app-layout__inner-wrap">
-      <div class="header">
+      <div v-if="this.$route.name !== 'index'" class="header">
         <ul class="header__nav">
           <li class="header__nav-title--home">
             <nuxt-link :to="{ name: 'index' }">home</nuxt-link>
@@ -50,33 +50,27 @@ export default {
       float: right;
     }
     &__nav-title {
-      font-weight: 400;
       color: #526488;
       display: inline-block;
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       text-transform: capitalize;
-      background-color: #54BCF6;
+      border: 2px solid #a6deeb;
       border-radius: 20px;
       padding: 4px 14px 6px;
-      color: #fff;
-      font-style: italic;
-      font-weight: 300;
+      font-family: 'Lato', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       &:not(:last-child) {
         margin-right: 20px;
       }
     }
     &__nav-title--home {
-      font-weight: 400;
       color: #526488;
       display: inline-block;
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       text-transform: capitalize;
-      background-color: #54BCF6;
+      border: 2px solid #a6deeb;
       border-radius: 20px;
       padding: 4px 14px 6px;
-      color: #fff;
-      font-style: italic;
-      font-weight: 300;
+      font-family: 'Lato', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     }
   }
 </style>

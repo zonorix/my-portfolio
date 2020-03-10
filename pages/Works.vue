@@ -36,11 +36,8 @@ export default {
 
 <style lang="scss" scoped>
   .works {
-    margin: 100px auto 0;
+    margin: 100px auto 40px;
     min-height: 100vh;
-    &__items-container {
-      margin-top: 100px;
-    }
     &__list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
