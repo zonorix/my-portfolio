@@ -25,7 +25,7 @@
 export default {
   data () {
     return {
-      linkTitles: this.$store.state.linkData
+      linkTitles: this.$store.getters.filteredLinks
     }
   }
 }
@@ -40,7 +40,7 @@ export default {
   @include css3(align-items, center);
   @include css3(flex-direction, column);
   text-align: center;
-  background-color: #ccebd1;
+  // background-color: #ccebd1;
   &__portfolio-icon {
     max-width: 150px;
     height: auto;
@@ -55,39 +55,57 @@ export default {
     display: block;
     font-weight: 300;
     font-size: 8rem;
-    color: #35495e;
+    color: $text-main-color;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
   &__sub {
     font-weight: 300;
     font-size: 4.2rem;
-    color: #526488;
+    color: $text-sub-color;
     word-spacing: 5px;
     padding-bottom: 15px;
     text-transform: capitalize;
   }
 }
 .link {
-  // background-color: #a6deeb;
-  // border-radius: 40px;
-  // margin-top: 40px;
   &__list {
     @include css3(display, flex);
     @include css3(align-items, center);
     margin-top: 40px;
   }
   &__list-item {
-    color: #526488;
+    color: $text-sub-color;
     display: inline-block;
     font-size: 1.4rem;
+    font-weight: 900;
     text-transform: capitalize;
-    border: 2px solid #a6deeb;
-    background-color: #a6deeb;
-    border-radius: 40px;
-    padding: 10px 28px 12px;
+    background-color: $accent-color;
+    border-radius: 20px;
+    padding: 10px 0 12px;
     font-family: 'Lato', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     margin: 0 12px;
+    border-bottom: 2px solid darken($accent-color, 50%);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    position: relative;
+    width: 100px;
+    height: 40px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      letter-spacing: 2px;
+    }
+    &:active {
+      transform: translateY(4px);
+      border-bottom: none;
+    }
+  a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      line-height: 40px;
+    }
   }
 }
 

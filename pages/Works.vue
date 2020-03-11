@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss" scoped>
   .works {
-    margin: 100px auto 40px;
+    margin: 60px auto 40px;
     min-height: 100vh;
     &__list {
       display: grid;

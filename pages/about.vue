@@ -60,26 +60,19 @@ export default {
 
 <style scoped lang="scss">
   .about {
-    margin: 100px auto 40px;
+    margin: 60px auto 0;
     min-height: 100vh;
     &__gray-back {
-      background-color: #F3F7FB;
+      // background-color: #F3F7FB;
       margin: 0 40px;
-      border-radius: 40px;
+      // border-radius: 40px;
       padding-bottom: 60px;
-    }
-    &__icon-container {
-      background-color: #ccebd1;
-      // background-color: #ccebd1;
-      border-radius: 40px 40px 0 0;
-      padding-bottom: 40px;
     }
     &__face-icon {
       max-width: 150px;
       height: auto;
       display: block;
       margin: 40px auto 0;
-      padding-top: 60px;
     }
     &__greet {
       text-align: center;
@@ -89,18 +82,19 @@ export default {
     }
   }
   .skillset {
-    width: 360px;
+    width: 400px;
     max-width: 100%;
     height: 100%;
-    margin: auto;
-    padding: 0 20px;
+    margin: 40px auto 0;
+    padding: 40px 60px;
+    background-color: $gray-back-color;
+    border-radius: 40px;
     &__title {
       text-align: center;
       font-size: 2.0rem;
-      color: #35495e;
+      color: $text-main-color;
       text-transform: uppercase;
       font-family: 'Patua One', cursive;
-      margin-top: 38px;
       * {
         display: inline-block;
         margin: 0 1.6px;
@@ -109,7 +103,7 @@ export default {
         width: 24px;
       }
       &--s, &--s-2 {
-        background-color: #a6deeb;
+        background-color: $accent-color;
         color: #fff;
       }
     }
@@ -123,7 +117,7 @@ export default {
       font-size: 1.6rem;
       font-weight: normal;
       font-family: 'Spinnaker', sans-serif;
-      color: #35495e;
+      color: $text-main-color;
       text-transform: uppercase;
     }
     &__item {
@@ -131,8 +125,8 @@ export default {
       display: inline-block;
       margin: 8px 10px 0 0;
       padding: 4px 14px 6px;
-      border: 1px solid #a6deeb;
-      color: #526488;
+      border: 1px solid $accent-color;
+      color: $text-sub-color;
       background-color: #fff;
       line-height: 1;
     }

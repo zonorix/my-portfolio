@@ -16,7 +16,7 @@ export default {
 
 <style scoped lang="scss">
   .contact {
-    margin: 100px auto 0;
+    margin: 60px auto 0;
     min-height: 100vh;
   }
 </style>
