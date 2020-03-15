@@ -72,7 +72,7 @@ export default {
       max-width: 150px;
       height: auto;
       display: block;
-      margin: 40px auto 0;
+      margin: auto;
     }
     &__greet {
       text-align: center;
