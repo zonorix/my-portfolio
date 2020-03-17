@@ -1,7 +1,7 @@
 <template>
   <div class="works">
     <div class="works__inner-wrap">
-      <Title :pageTitle="this.$route.name" />
+      <Title :page-title="this.$route.name" />
       <div class="works__items-container">
         <ul class="works__list">
           <li v-for="listItem in listItems" :key="listItem.id" class="works__list-item">{{ listItem.title }}</li>

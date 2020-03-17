@@ -28,6 +28,11 @@ export default {
 </script>
 
 <style lang="scss">
+//Vuetify上書き---------------------------------
+  .v-application--wrap {
+    min-height: 0;
+  }
+//-------------------------------------------------
   .app-layout{
     background-color: $base-color;
     &__inner-wrap {

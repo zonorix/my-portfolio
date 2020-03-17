@@ -51,7 +51,7 @@ export default {
 .title {
   margin-top: 32px;
   &__text{
-    font-family: 'Spinnaker', sans-serif;
+    font-family: 'Spinnaker', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     display: block;
     font-weight: 300;
     font-size: 8rem;

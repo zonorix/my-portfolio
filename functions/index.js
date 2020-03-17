@@ -23,6 +23,9 @@ ${data.name}
 メールアドレス：
 ${data.email}
 
+タイトル：
+${data.title}
+
 内容：
 ${data.contents}
 `

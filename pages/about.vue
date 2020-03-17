@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <Title :pageTitle="this.$route.name" />
+    <Title :page-title="this.$route.name" />
     <div class="about__gray-back">
       <div class="about__icon-container">
         <img src="images/face-icon.svg" alt="" class="about__face-icon">

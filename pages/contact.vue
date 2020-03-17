@@ -1,52 +1,57 @@
 <template>
   <div class="contact">
-    <Title :pageTitle="this.$route.name" />
+    <Title :page-title="this.$route.name" />
     <v-app>
-      <v-card>
-        <v-container class="inner-wrap">
-          <h2>お問い合わせ</h2>
-          <v-form ref="form" v-model="contactFormValidation.valid" lazy-validation>
-            <v-text-field
-              v-model="contactForm.name"
-              :rules="contactFormValidation.nameRules"
-              label="名前"
-              required
-            />
-            <v-text-field
-              v-model="contactForm.email"
-              :rules="contactFormValidation.emailRules"
-              label="メールアドレス"
-              required
-            />
-            <v-textarea
-              v-model="contactForm.contents"
-              :rules="contactFormValidation.contentsRules"
-              label="内容"
-              required
-            />
+      <v-container class="inner-wrap">
+        <v-form ref="form" v-model="contactFormValidation.valid" lazy-validation>
+          <v-text-field
+            v-model="contactForm.name"
+            :rules="contactFormValidation.nameRules"
+            label="お名前"
+            filled
+            required
+          />
+          <v-text-field
+            v-model="contactForm.email"
+            :rules="contactFormValidation.emailRules"
+            label="メールアドレス"
+            filled
+            required
+          />
+          <v-text-field
+            v-model="contactForm.title"
+            label="タイトル"
+            filled
+          />
+          <v-textarea
+            v-model="contactForm.contents"
+            :rules="contactFormValidation.contentsRules"
+            label="内容"
+            filled
+            required
+          />
+          <div class="btn-wrap">
             <v-btn
               :loading="contactForm.loading"
               :disabled="!contactFormValidation.valid"
-              block
               large
-              color="info"
-              class="mt-4 font-weight-bold"
+              class="mt-4 submit-btn"
               @click="sendMail()"
             >送信
             </v-btn>
-          </v-form>
-        </v-container>
-        <v-snackbar
-          v-model="snackBar.show"
-          :color="snackBar.color"
-          bottom
-          right
-          :timeout="6000"
-          class="font-weight-bold"
-        >
-          {{ snackBar.message }}
-        </v-snackbar>
-      </v-card>
+          </div>
+        </v-form>
+      </v-container>
+      <v-snackbar
+        v-model="snackBar.show"
+        :color="snackBar.color"
+        bottom
+        right
+        :timeout="6000"
+        class="font-weight-bold"
+      >
+        {{ snackBar.message }}
+      </v-snackbar>
     </v-app>
   </div>
 </template>
@@ -65,6 +70,7 @@ export default {
         name: '',
         contents: '',
         email: '',
+        title: '',
         loading: false
       },
       contactFormValidation: {
@@ -120,8 +126,31 @@ export default {
 </script>
 
 <style scoped lang="scss">
+//Vuetify上書き-----------------------------------
+  .v-application {
+    background-color: $base-color;
+    font-family: 'M PLUS 1p', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  .container {
+    max-width: 400px;
+  }
+  .v-btn.v-size--large {
+    font-size: 1.4rem;
+  }
+  .submit-btn {
+    color: #fff;
+  }
+  .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+    background-color: #6964ad;
+    width: 100px;
+}
+//------------------------------------------------
+
   .contact {
     margin: 60px auto 0;
     min-height: 100vh;
+  }
+  .btn-wrap {
+    text-align: center;
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="title">{{ pageTitle }}</h1>
-    <div class="title-line"></div>
+    <div class="title-line" />
   </div>
 </template>
 
