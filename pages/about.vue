@@ -21,26 +21,58 @@
         </h2>
         <div class="skillset__item-container">
           <div class="skillset__main-container">
-            <h3 class="skillset__sub-title">main</h3>
-            <div class="skillset__item">HTML</div>
-            <div class="skillset__item">CSS</div>
-            <div class="skillset__item">jQuery</div>
-            <div class="skillset__item">WordPress</div>
+            <h3 class="skillset__sub-title">
+              main
+            </h3>
+            <div class="skillset__item">
+              HTML
+            </div>
+            <div class="skillset__item">
+              CSS
+            </div>
+            <div class="skillset__item">
+              jQuery
+            </div>
+            <div class="skillset__item">
+              WordPress
+            </div>
           </div>
           <div class="skillset__develop-container">
-            <h3 class="skillset__sub-title">develop</h3>
-            <div class="skillset__item">JavaScrip</div>
-            <div class="skillset__item">PHP</div>
-            <div class="skillset__item">Vue.js</div>
-            <div class="skillset__item">Web Design</div>
+            <h3 class="skillset__sub-title">
+              develop
+            </h3>
+            <div class="skillset__item">
+              JavaScrip
+            </div>
+            <div class="skillset__item">
+              PHP
+            </div>
+            <div class="skillset__item">
+              Vue.js
+            </div>
+            <div class="skillset__item">
+              Web Design
+            </div>
           </div>
           <div class="skillset__others-container">
-            <h3 class="skillset__sub-title">others</h3>
-            <div class="skillset__item">Pug</div>
-            <div class="skillset__item">SCSS</div>
-            <div class="skillset__item">BEM</div>
-            <div class="skillset__item">Git</div>
-            <div class="skillset__item">Gulp</div>
+            <h3 class="skillset__sub-title">
+              others
+            </h3>
+            <div class="skillset__item">
+              Pug
+            </div>
+            <div class="skillset__item">
+              SCSS
+            </div>
+            <div class="skillset__item">
+              BEM
+            </div>
+            <div class="skillset__item">
+              Git
+            </div>
+            <div class="skillset__item">
+              Gulp
+            </div>
           </div>
         </div>
       </div>
@@ -63,9 +95,7 @@ export default {
     margin: 60px auto 0;
     min-height: 100vh;
     &__gray-back {
-      // background-color: #F3F7FB;
       margin: 0 40px;
-      // border-radius: 40px;
       padding-bottom: 60px;
     }
     &__face-icon {
@@ -116,7 +146,7 @@ export default {
     &__sub-title {
       font-size: 1.6rem;
       font-weight: normal;
-      font-family: 'Spinnaker', sans-serif;
+      font-family: 'Spinnaker', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       color: $text-main-color;
       text-transform: uppercase;
     }

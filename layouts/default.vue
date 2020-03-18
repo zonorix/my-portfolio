@@ -1,7 +1,7 @@
 <template>
   <div class="app-layout">
     <div class="app-layout__inner-wrap">
-      <div v-if="this.$route.name !== 'index'" class="header">
+      <div class="header">
         <ul class="header__nav">
           <li v-for="linkTitle in linkTitles" :key="linkTitle.id" class="header__nav-title">
             <nuxt-link :to="{ name: `${linkTitle.address}` }">
@@ -29,8 +29,9 @@ export default {
 
 <style lang="scss">
 //Vuetify上書き---------------------------------
-  .v-application--wrap {
+  .v-application .v-application--wrap {
     min-height: 0;
+    background-color: $base-color;
   }
 //-------------------------------------------------
   .app-layout{
@@ -83,4 +84,5 @@ export default {
       }
     }
   }
+
 </style>

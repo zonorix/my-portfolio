@@ -37,7 +37,8 @@
               large
               class="mt-4 submit-btn"
               @click="sendMail()"
-            >送信
+            >
+              送信
             </v-btn>
           </div>
         </v-form>
@@ -138,7 +139,7 @@ export default {
     font-size: 1.4rem;
   }
   .submit-btn {
-    color: #fff;
+    color: #fff !important;
   }
   .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
     background-color: #6964ad;

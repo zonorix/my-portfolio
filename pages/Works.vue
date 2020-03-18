@@ -4,7 +4,9 @@
       <Title :page-title="this.$route.name" />
       <div class="works__items-container">
         <ul class="works__list">
-          <li v-for="listItem in listItems" :key="listItem.id" class="works__list-item">{{ listItem.title }}</li>
+          <li v-for="listItem in listItems" :key="listItem.id" class="works__list-item">
+            {{ listItem.title }}
+          </li>
         </ul>
       </div>
     </div>

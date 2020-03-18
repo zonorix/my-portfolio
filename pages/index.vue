@@ -9,15 +9,6 @@
         portfolio
       </h2>
     </div>
-    <div class="link">
-      <ul class="link__list">
-        <li v-for="linkTitle in linkTitles" :key="linkTitle.id" class="link__list-item">
-          <nuxt-link :to="{ name: `${linkTitle.address}` }">
-            {{ linkTitle.name }}
-          </nuxt-link>
-        </li>
-      </ul>
-    </div>
   </div>
 </template>
 
@@ -33,7 +24,7 @@ export default {
 
 <style scoped lang="scss">
 .home {
-  margin: 0 auto;
+  margin: -40px auto 0;
   min-height: 100vh;
   @include css3(display, flex);
   @include css3(justify-content, center);
@@ -45,7 +36,6 @@ export default {
     max-width: 150px;
     height: auto;
     display: block;
-    margin-top: 40px;
   }
 }
 .title {
