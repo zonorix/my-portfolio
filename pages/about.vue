@@ -15,6 +15,7 @@
           <span class="skillset__title--i">i</span>
           <span class="skillset__title--l">l</span>
           <span class="skillset__title--l-2">l</span>
+          <br class="skillset__title--br">
           <span class="skillset__title--s-2">s</span>
           <span class="skillset__title--e">e</span>
           <span class="skillset__title--t">t</span>
@@ -92,7 +93,8 @@ export default {
 
 <style scoped lang="scss">
   .about {
-    margin: 60px auto 0;
+    margin: auto;
+    padding: 60px 0 40px;
     min-height: 100vh;
     &__gray-back {
       margin: 0 40px;
@@ -136,6 +138,9 @@ export default {
         background-color: $accent-color;
         color: #fff;
       }
+      &--br {
+        display: none;
+      }
     }
     &__item-container {
       margin-top: 28px;
@@ -159,6 +164,37 @@ export default {
       color: $text-sub-color;
       background-color: #fff;
       line-height: 1;
+    }
+  }
+
+  @media screen and (max-width:767px) {
+    .about {
+      &__greet {
+        font-size: 1.6rem;
+      }
+      &__face-icon {
+        max-width: 120px;
+      }
+    }
+    .skillset {
+      text-align: center;
+      &__title {
+        font-size: 1.8rem;
+        * {
+          margin: 0;
+          line-height: 20px;
+          width: 20px;
+        }
+        &--br {
+          display: block;
+        }
+      }
+      &__sub-title {
+        font-size: 1.4rem;
+      }
+      &__item {
+        font-size: 1.4rem;
+      }
     }
   }
 </style>

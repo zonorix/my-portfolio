@@ -106,7 +106,7 @@ export default {
               'error',
               '送信に失敗しました。時間をおいて再度お試しください'
             )
-            console.log(err)
+            alert(err)
           })
           .finally(() => {
             this.contactForm.loading = false
@@ -148,7 +148,8 @@ export default {
 //------------------------------------------------
 
   .contact {
-    margin: 60px auto 0;
+    margin: auto;
+    padding: 60px 0 40px;
     min-height: 100vh;
   }
   .btn-wrap {

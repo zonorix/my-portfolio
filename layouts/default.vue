@@ -1,15 +1,18 @@
 <template>
   <div class="app-layout">
     <div class="app-layout__inner-wrap">
-      <div class="header">
-        <ul class="header__nav">
-          <li v-for="linkTitle in linkTitles" :key="linkTitle.id" class="header__nav-title">
-            <nuxt-link :to="{ name: `${linkTitle.address}` }">
-              {{ linkTitle.name }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </div>
+      <header class="header" :class="{ 'active' : isActive}">
+        <nav class="header__nav" :class="{ 'active' : isActive}">
+          <ul class="header__nav-list">
+            <li v-for="linkTitle in linkTitles" :key="linkTitle.id" class="header__nav-title" @click="toggleSP">
+              <nuxt-link :to="{ name: `${linkTitle.address}` }">
+                {{ linkTitle.name }}
+              </nuxt-link>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__toggle" :class="{ 'active' : isActive}" @click="toggle" />
+      </header>
       <div class="main-content">
         <nuxt />
       </div>
@@ -21,7 +24,18 @@
 export default {
   data () {
     return {
-      linkTitles: this.$store.state.linkData
+      linkTitles: this.$store.state.linkData,
+      isActive: false
+    }
+  },
+  methods: {
+    toggle () {
+      this.isActive = !this.isActive
+    },
+    toggleSP () {
+      if (this.isActive) {
+        this.isActive = !this.isActive
+      }
     }
   }
 }
@@ -45,8 +59,16 @@ export default {
     }
   }
   .header {
-    text-align: center;
+    top: 0;
+    z-index: 10;
+    // position: absolute;
+    width: 100%;
     &__nav {
+      max-width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+    &__nav-list {
       padding: 40px 40px 0;
     }
     &__nav-title {
@@ -83,6 +105,104 @@ export default {
         line-height: 40px;
       }
     }
+    &__toggle {
+      display: none;
+    }
   }
+
+@media screen and (max-width:767px) {
+  .header {
+    background-color: #F4F4F5;
+      position: relative;
+      &.active::before {  //トグルクリック時の背景オーバーレイ
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+    }
+    &__nav {
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      right: -100vw;
+      width: 300px;
+      height: 100%;
+      background-color: #fff;
+      transition: 0.5s transform;
+      transition-timing-function: cubic-bezier(.38,.52,.23,.99);
+      @include css3(display, flex);
+      @include css3(align-items, center);
+      &.active {
+          transform: translateX(-100vw);
+          margin-left: 30px;
+      }
+    }
+    &__nav-list {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    &__nav-title {
+      width: 100%;
+      font-size: 4rem;
+      padding: 0;
+      margin: 0;
+      letter-spacing: -0.45px;
+      background-color: #fff;
+      border-bottom: none;
+      &:not(:first-child) {
+        margin-top: 80px;
+      }
+      &::after {
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        content: '';
+        width: 30%;
+        height: 4px;
+        background: $accent-color;
+        transform: scale(0, 1);
+        transform-origin: center top;
+        transition: transform .3s;
+      }
+      &:hover::after {
+        transform: scale(1, 1);
+      }
+    }
+    &__toggle {
+      display: block;
+      transition: 0.5s transform;
+      transition-timing-function: cubic-bezier(0.61, -0.38, 0.37, 1.27);
+      cursor: pointer;
+      z-index: 10;
+      position: fixed;
+      height: 68px;
+      top: 0;
+      right: 16px;
+      &::before {        //ハンバーガートグル
+        font-family:'Font Awesome 5 Free';
+        content: '\f0c9';
+        font-size: 25px;
+        line-height: 68px;
+        font-weight: 900;
+        color: $text-main-color;
+      }
+      &.active {          //トグルクリック時の位置
+        transform: translateX(-300px);
+        }
+      &.active::before {        //×トグル
+        content: '\f00d';
+        color: #fff;
+      }
+    }
+  }
+}
 
 </style>

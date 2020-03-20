@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <h1 class="title">{{ pageTitle }}</h1>
+    <h1 class="title">
+      {{ pageTitle }}
+    </h1>
     <div class="title-line" />
   </div>
 </template>
@@ -31,5 +33,12 @@ export default {
     height: 4px;
     margin: 10px auto 44px;
     background-color: #a6deeb;
+  }
+
+  @media screen and (max-width:767px) {
+    .title {
+      font-size: 3.2rem;
+      letter-spacing: 0.16em;
+    }
   }
 </style>

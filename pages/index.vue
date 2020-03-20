@@ -40,7 +40,7 @@ export default {
 }
 .title {
   margin-top: 32px;
-  &__text{
+  &__text {
     font-family: 'Spinnaker', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     display: block;
     font-weight: 300;
@@ -95,6 +95,20 @@ export default {
       width: 100%;
       height: 100%;
       line-height: 40px;
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  .home {
+    margin: auto;
+  }
+  .title {
+    &__text {
+      font-size: 6rem;
+    }
+    &__sub {
+      font-size: 3.4rem;
     }
   }
 }
